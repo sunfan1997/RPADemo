@@ -1,0 +1,9 @@
+D:\visual studio project\Demo02\Demo02\bin\Debug\Demo02.exe.config
+D:\visual studio project\Demo02\Demo02\bin\Debug\Demo02.exe
+D:\visual studio project\Demo02\Demo02\bin\Debug\Demo02.pdb
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.Properties.Resources.resources
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.csproj.GenerateResource.Cache
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.exe
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.pdb
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.Form1.resources
+D:\visual studio project\Demo02\Demo02\obj\Debug\Demo02.csprojResolveAssemblyReference.cache

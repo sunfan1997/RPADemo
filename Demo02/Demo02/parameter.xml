@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+  <controls type="System.Windows.Forms.Button" language="Chinese" name="button1">
+    <title>button1</title>
+    <visible>true</visible>
+    <enable>true</enable>
+    <value>28</value>
+  </controls>
+  <controls type="System.Windows.Forms.TextBox" language="Chinese" name="textBox3">
+    <title></title>
+    <visible>true</visible>
+    <enable>true</enable>
+    <value>28</value>
+  </controls>
+  <controls type="System.Windows.Forms.TextBox" language="Chinese" name="textBox2">
+    <title></title>
+    <visible>true</visible>
+    <enable>true</enable>
+    <value>28</value>
+  </controls>
+  <controls type="System.Windows.Forms.TextBox" language="Chinese" name="textBox1">
+    <title>123</title>
+    <visible>true</visible>
+    <enable>true</enable>
+    <value>28</value>
+  </controls>
+</table>

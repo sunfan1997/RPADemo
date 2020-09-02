@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Forms>
+  <FormName Name="测试">
+    <parm>comboBox1$2|checkBox1$True|textBox3$pantext|textBox2$sfafas|textBox1$123</parm>
+  </FormName>
+  <FormName Name="Form1">
+    <parm>textBox3$pantext|textBox2$sfafas|textBox1$123</parm>
+  </FormName>
+</Forms>

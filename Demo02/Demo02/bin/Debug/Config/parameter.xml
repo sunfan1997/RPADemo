@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Forms>
+  <FormName Name="Form1">
+    <parm>textBox3$|textBox2$|textBox1$</parm>
+  </FormName>
+</Forms>
