@@ -61,113 +61,119 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="control widget\Excel_AppendRange.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_AppendRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_AppendRange.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_AppendRange.Designer.cs">
       <DependentUpon>Excel_AppendRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_CloseBook.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_CloseBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_CloseBook.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_CloseBook.Designer.cs">
       <DependentUpon>Excel_CloseBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_CopySheet.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_CopySheet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_CopySheet.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_CopySheet.Designer.cs">
       <DependentUpon>Excel_CopySheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_DeleteDataSet.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_DeleteDataSet.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.Designer.cs">
       <DependentUpon>Excel_DeleteDataSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_GetCellColor.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetCellColor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_GetCellColor.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetCellColor.Designer.cs">
       <DependentUpon>Excel_GetCellColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_GetSelectedRange.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetSelectedRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_GetSelectedRange.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetSelectedRange.Designer.cs">
       <DependentUpon>Excel_GetSelectedRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_GetWorkBookSheet.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetWorkBookSheet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_GetWorkBookSheet.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_GetWorkBookSheet.Designer.cs">
       <DependentUpon>Excel_GetWorkBookSheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_OpenFile.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_OpenFile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_OpenFile.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_OpenFile.Designer.cs">
       <DependentUpon>Excel_OpenFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCell.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCell.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCell.Designer.cs">
       <DependentUpon>Excel_ReadCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCellFormula.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCellFormula.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCellFormula.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCellFormula.Designer.cs">
       <DependentUpon>Excel_ReadCellFormula.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCloumn.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCloumn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_ReadCloumn.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadCloumn.Designer.cs">
       <DependentUpon>Excel_ReadCloumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_ReadRange.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_ReadRange.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadRange.Designer.cs">
       <DependentUpon>Excel_ReadRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_ReadRow.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_ReadRow.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_ReadRow.Designer.cs">
       <DependentUpon>Excel_ReadRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_SaveBook.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SaveBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_SaveBook.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SaveBook.Designer.cs">
       <DependentUpon>Excel_SaveBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_SelectRange.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SelectRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_SelectRange.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SelectRange.Designer.cs">
       <DependentUpon>Excel_SelectRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_SetRangeColor.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SetRangeColor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_SetRangeColor.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_SetRangeColor.Designer.cs">
       <DependentUpon>Excel_SetRangeColor.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_WriteCell.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_WriteCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_WriteCell.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_WriteCell.Designer.cs">
       <DependentUpon>Excel_WriteCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Excel_WriteRange.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_WriteRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Excel_WriteRange.Designer.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_WriteRange.Designer.cs">
       <DependentUpon>Excel_WriteRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_If.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_If.Designer.cs">
+      <DependentUpon>Control_If.cs</DependentUpon>
     </Compile>
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="FormMain.cs">
@@ -184,59 +190,62 @@
     <Compile Include="control widget\baseform.Designer.cs">
       <DependentUpon>baseform.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="control widget\Excel_AppendRange.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_AppendRange.resx">
       <DependentUpon>Excel_AppendRange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_CloseBook.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_CloseBook.resx">
       <DependentUpon>Excel_CloseBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_CopySheet.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_CopySheet.resx">
       <DependentUpon>Excel_CopySheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_DeleteDataSet.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.resx">
       <DependentUpon>Excel_DeleteDataSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_GetCellColor.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_GetCellColor.resx">
       <DependentUpon>Excel_GetCellColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_GetSelectedRange.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_GetSelectedRange.resx">
       <DependentUpon>Excel_GetSelectedRange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_GetWorkBookSheet.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_GetWorkBookSheet.resx">
       <DependentUpon>Excel_GetWorkBookSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_OpenFile.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_OpenFile.resx">
       <DependentUpon>Excel_OpenFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_ReadCell.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_ReadCell.resx">
       <DependentUpon>Excel_ReadCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_ReadCellFormula.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_ReadCellFormula.resx">
       <DependentUpon>Excel_ReadCellFormula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_ReadCloumn.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_ReadCloumn.resx">
       <DependentUpon>Excel_ReadCloumn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_ReadRange.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_ReadRange.resx">
       <DependentUpon>Excel_ReadRange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_ReadRow.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_ReadRow.resx">
       <DependentUpon>Excel_ReadRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_SaveBook.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_SaveBook.resx">
       <DependentUpon>Excel_SaveBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_SelectRange.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_SelectRange.resx">
       <DependentUpon>Excel_SelectRange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_SetRangeColor.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_SetRangeColor.resx">
       <DependentUpon>Excel_SetRangeColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_WriteCell.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_WriteCell.resx">
       <DependentUpon>Excel_WriteCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Excel_WriteRange.resx">
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_WriteRange.resx">
       <DependentUpon>Excel_WriteRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control widget\WorkFlow\Controls\Control_If.resx">
+      <DependentUpon>Control_If.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.byn.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

@@ -59,7 +59,7 @@
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "baseform";
-            this.Size = new System.Drawing.Size(318, 98);
+            this.Size = new System.Drawing.Size(1000, 1000);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.baseform_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.baseform_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.baseform_MouseUp);

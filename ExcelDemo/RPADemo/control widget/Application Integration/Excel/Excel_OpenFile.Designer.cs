@@ -73,7 +73,7 @@
             this.Controls.Add(this.TB_FilePath);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Excel_OpenFile";
-            this.Size = new System.Drawing.Size(323, 95);
+            this.Size = new System.Drawing.Size(320, 100);
             this.ResumeLayout(false);
             this.PerformLayout();
 

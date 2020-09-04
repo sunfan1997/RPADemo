@@ -1,6 +1,6 @@
 ﻿namespace ExcelDemo.control_widget
 {
-    partial class Excel_DeleteDataSet
+    partial class Excel_GetWorkBookSheet
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -33,23 +33,23 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 30);
+            this.label1.Size = new System.Drawing.Size(200, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "删除范围";
+            this.label1.Text = "获取工作簿工作表";
             // 
-            // Excel_DeleteDataSet
+            // Excel_GetWorkBookSheet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "Excel_DeleteDataSet";
-            this.Size = new System.Drawing.Size(400, 40);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Name = "Excel_GetWorkBookSheet";
+            this.Size = new System.Drawing.Size(200, 20);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
