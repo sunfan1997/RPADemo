@@ -4,6 +4,7 @@ using ExcelDemo;
 using ExcelDemo.control_widget;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace RPADemo
         string path = null;
         bool isMouseDown = false;
         bool isMouseMove = false;
+
+        DataTable dt = new DataTable();
 
         ExcelDemo.baseform test = null;
         string NodeText = "";
@@ -315,18 +318,30 @@ namespace RPADemo
         #region 画线
         public void FindBaseForm(Control parent)
         {
-            Console.WriteLine(parent.Controls.Count);
-            List<Control> list_control = new List<Control>();
+            //Console.WriteLine(parent.Controls.Count);
+            List<baseform> list_control = new List<baseform>();
            
             for(int i=0;i<parent.Controls.Count;i++)
             {
-                list_control.Add(parent.Controls[i]);
+               // Console.WriteLine(parent.Controls[i].GetType().Name);
+
+                try
+                {
+                    list_control.Add((baseform)parent.Controls[i]);
+                }
+                catch(Exception e)
+                {
+                    e.ToString();
+                    continue;
+                }
                 
+               
             }
             list_control.Sort(compare);
+            //Console.WriteLine(list_control.Count);
             for (int i=0;i<list_control.Count-1;i++)
             {
-                Console.WriteLine(list_control[i].Name);
+               // Console.WriteLine(list_control[i].Name);
                 
                 int x1, y1, x2, y2;
                 x1 = list_control[i].Location.X + list_control[i].Size.Width/2;
@@ -371,5 +386,54 @@ namespace RPADemo
             }
             return 1;    
         }
+        //变量按钮
+        private void TSBtn_Variable_Click(object sender, EventArgs e)
+        {
+            DGV_Variable.Visible = DGV_Variable.Visible == true ? false : true; 
+        }
+        private int rowindex=0;
+        private void ToolStripMenuItem_Delete_Click(object sender, EventArgs e)
+        {
+            if(!DGV_Variable.CurrentRow.IsNewRow)
+            {
+                DGV_Variable.Rows.RemoveAt(rowindex);
+            }
+        }
+
+        private void DGV_Variable_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            rowindex = e.RowIndex;
+        }
+
+        private void DGV_Variable_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            dt = ToDataTable(DGV_Variable);
+           
+        }
+        //复制
+        private DataTable ToDataTable(DataGridView dataGridView, string tableName = null)
+        {
+            DataGridView dgv = dataGridView;
+            DataTable table = new DataTable(tableName);
+
+            for (int iCol = 0; iCol < dgv.Columns.Count; iCol++)
+            {
+                table.Columns.Add(dgv.Columns[iCol].Name);
+            }
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                DataRow datarw = table.NewRow();
+                for (int iCol = 0; iCol < dgv.Columns.Count; iCol++)
+                {
+                    datarw[iCol] = row.Cells[iCol].Value;
+                }
+                table.Rows.Add(datarw);
+            }
+
+            return table;
+        }
     }
+
 }

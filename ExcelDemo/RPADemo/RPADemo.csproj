@@ -175,6 +175,14 @@
     <Compile Include="control widget\WorkFlow\Controls\Control_If.Designer.cs">
       <DependentUpon>Control_If.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DS_Variable.cs">
+      <DependentUpon>DS_Variable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DS_Variable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Variable.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -266,6 +274,17 @@
     <EmbeddedResource Include="control widget\baseform.resx">
       <DependentUpon>baseform.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet\DS_Variable.xsc">
+      <DependentUpon>DS_Variable.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DS_Variable.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Variable.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DS_Variable.xss">
+      <DependentUpon>DS_Variable.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

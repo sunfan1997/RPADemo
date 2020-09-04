@@ -91,7 +91,6 @@ D:\visual studio project\RPADemo\ExcelDemo\RPADemo\bin\Debug\Microsoft.mshtml.dl
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\bin\Debug\Spire.License.xml
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\bin\Debug\Spire.Pdf.xml
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\bin\Debug\Spire.XLS.xml
-D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.csprojResolveAssemblyReference.cache
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\ExcelDemo.control_widget.Excel_AppendRange.resources
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\ExcelDemo.control_widget.Excel_CloseBook.resources
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\ExcelDemo.control_widget.Excel_CopySheet.resources
@@ -116,3 +115,4 @@ D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\ExcelDemo.baseform.
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.FormMain.byn.resources
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.csproj.GenerateResource.Cache
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\byn\RPADemo.resources.dll
+D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.control_widget.WorkFlow.Controls.Control_If.resources
