@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace ExcelDemo.control_widget
 {
-    public partial class Excel_DeleteDataSet : baseform
+    public partial class Excel_DeleteRange : baseform
     {
         /// <summary>
         /// 删除范围
         /// </summary>
-        public Excel_DeleteDataSet()
+        public Excel_DeleteRange()
         {
             InitializeComponent();
         }

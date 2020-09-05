@@ -49,9 +49,9 @@
             this.Pan_Main = new System.Windows.Forms.Panel();
             this.DGV_Variable = new System.Windows.Forms.DataGridView();
             this.Varname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Range = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DefaultValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VarType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.VarRange = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.VarValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip_DGV = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
@@ -218,9 +218,9 @@
             this.DGV_Variable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Variable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Varname,
-            this.Type,
-            this.Range,
-            this.DefaultValue});
+            this.VarType,
+            this.VarRange,
+            this.VarValue});
             this.DGV_Variable.ContextMenuStrip = this.contextMenuStrip_DGV;
             resources.ApplyResources(this.DGV_Variable, "DGV_Variable");
             this.DGV_Variable.GridColor = System.Drawing.SystemColors.Control;
@@ -235,33 +235,33 @@
             resources.ApplyResources(this.Varname, "Varname");
             this.Varname.Name = "Varname";
             // 
-            // Type
+            // VarType
             // 
-            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Type, "Type");
-            this.Type.Items.AddRange(new object[] {
+            this.VarType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.VarType, "VarType");
+            this.VarType.Items.AddRange(new object[] {
             "String",
             "bool",
             "Int32",
             "Object",
             "Array of[T]"});
-            this.Type.Name = "Type";
-            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.VarType.Name = "VarType";
+            this.VarType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VarType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // Range
+            // VarRange
             // 
-            this.Range.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Range, "Range");
-            this.Range.Name = "Range";
-            this.Range.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Range.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.VarRange.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.VarRange, "VarRange");
+            this.VarRange.Name = "VarRange";
+            this.VarRange.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VarRange.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // DefaultValue
+            // VarValue
             // 
-            this.DefaultValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.DefaultValue, "DefaultValue");
-            this.DefaultValue.Name = "DefaultValue";
+            this.VarValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.VarValue, "VarValue");
+            this.VarValue.Name = "VarValue";
             // 
             // contextMenuStrip_DGV
             // 
@@ -314,6 +314,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             ((System.Windows.Forms.TreeNode)(resources.GetObject("treeView1.Nodes")))});
+            this.treeView1.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.treeView1_NodeMouseHover);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             this.treeView1.MouseLeave += new System.EventHandler(this.treeView1_MouseLeave);
             // 
@@ -373,12 +374,12 @@
         private System.Windows.Forms.ToolStripButton TSBtn_Variable;
         private System.Windows.Forms.ToolStripButton TSBtn_Parameter;
         private System.Windows.Forms.ToolStripButton TSBtn_Import;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Varname;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Range;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DefaultValue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_DGV;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Varname;
+        private System.Windows.Forms.DataGridViewComboBoxColumn VarType;
+        private System.Windows.Forms.DataGridViewComboBoxColumn VarRange;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VarValue;
     }
 }
 

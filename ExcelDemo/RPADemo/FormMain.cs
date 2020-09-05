@@ -22,7 +22,7 @@ namespace RPADemo
         DataTable dt = new DataTable();
 
         ExcelDemo.baseform test = null;
-        string NodeText = "";
+        TreeNode Node;
         public FormMain()
         {
             InitializeComponent();
@@ -36,6 +36,8 @@ namespace RPADemo
             excelhelper.Sort(1, 2, 8);
         }
 
+
+        
         private void Btn_Saveas_Click(object sender, EventArgs e)
         {
             ReadXml();
@@ -57,7 +59,7 @@ namespace RPADemo
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             isMouseDown = true;
-            NodeText = e.Node.Text;
+            
          
         }
 
@@ -69,8 +71,11 @@ namespace RPADemo
         {
             isMouseMove = true;
         }
-     
-       
+        private void treeView1_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
+        {
+            Node = e.Node;
+        }
+
         #endregion
 
         #region panel2鼠标事件
@@ -78,7 +83,7 @@ namespace RPADemo
         {
             if (isMouseDown && isMouseMove)
             {
-                CheckNode(NodeText);
+                CheckNode(Node);
                 Point Point = Pan_Main.PointToClient(Control.MousePosition); //鼠标相对于panel2左上角的坐标
                 test.Location = Point;
                 
@@ -88,7 +93,7 @@ namespace RPADemo
             }
             isMouseDown = false;
             isMouseMove = false;
-            if (NodeText.Equals(treeView1.SelectedNode.Text))
+            if (Node.Text.Equals(treeView1.SelectedNode.Text))
             {
                 isMouseDown = true;
             }
@@ -111,16 +116,15 @@ namespace RPADemo
 
         #region 不同节点调用不同窗体
 
-        private void CheckNode(string nodename)
+        private void CheckNode(TreeNode node)
         {
-            switch (nodename)
+            switch (node.Text)
             {
                 case "Excel应用程序范围":
                     {
                         test = new Excel_OpenFile();
-                       
                     }
-                break;
+                    break;
                 case "保存工作簿":
                     {
                         test = new Excel_SaveBook();
@@ -139,7 +143,67 @@ namespace RPADemo
 
                     }
                     break;
-                default :test = new baseform();break;
+                case "写入单范围":
+                    {
+                        test = new Excel_WriteRange();
+                    }
+                    break;
+                case "删除单范围":
+                    {
+                        test = new Excel_DeleteRange();
+                    }
+                    break;
+                case "获取单元格颜色":
+                    {
+                        test = new Excel_GetCellColor();
+                    }
+                    break;
+                case "获取工作簿工作表":
+                    {
+                        test = new Excel_GetWorkBookSheet();
+                    }
+                    break;
+                case "获取选定范围":
+                    {
+                        test = new Excel_GetSelectedRange();
+                    }
+                    break;
+                case "读取列":
+                    {
+                        test = new Excel_ReadCloumn();
+                    }
+                    break;
+                case "读取单元格":
+                    {
+                        test = new Excel_ReadCell();
+                    }
+                    break;
+                case "读取单元格公式":
+                    {
+                        test = new Excel_ReadCellFormula();
+                    }
+                    break;
+                case "读取范围":
+                    {
+                        test = new Excel_ReadRange();
+                    }
+                    break;
+                case "读取行":
+                    {
+                        test = new Excel_ReadRow();
+                    }
+                    break;
+                case "选取范围":
+                    {
+                        test = new Excel_SelectRange();
+                    }
+                    break;
+                case "附加范围":
+                    {
+                        test = new Excel_AppendRange();
+                    }
+                    break;
+                default :MessageBox.Show("控件未添加");break;
         
             }
 
@@ -149,7 +213,6 @@ namespace RPADemo
         #region 运行按钮
         private void Tsb_Run_ButtonClick(object sender, EventArgs e)
         {
-            
         }
         #endregion
 
@@ -331,7 +394,7 @@ namespace RPADemo
                 }
                 catch(Exception e)
                 {
-                    e.ToString();
+                    //e.ToString();
                     continue;
                 }
                 
@@ -408,8 +471,16 @@ namespace RPADemo
 
         private void DGV_Variable_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-            dt = ToDataTable(DGV_Variable);
-           
+            //dt = ToDataTable(DGV_Variable);
+            //Console.WriteLine("========================");
+            //for (int i = 0; i < DGV_Variable.Rows.Count; i++)
+            //{
+            //    Console.WriteLine(dt.Rows[i]["VarName"].ToString() +
+            //        dt.Rows[i]["VarType"].ToString() +
+            //        dt.Rows[i][2].ToString() +
+            //        dt.Rows[i][3].ToString());
+            //}
+
         }
         //复制
         private DataTable ToDataTable(DataGridView dataGridView, string tableName = null)
@@ -434,6 +505,8 @@ namespace RPADemo
 
             return table;
         }
+
+       
     }
 
 }

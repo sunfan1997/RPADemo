@@ -79,11 +79,11 @@
     <Compile Include="control widget\Application Integration\Excel\Excel_CopySheet.Designer.cs">
       <DependentUpon>Excel_CopySheet.cs</DependentUpon>
     </Compile>
-    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.cs">
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.Designer.cs">
-      <DependentUpon>Excel_DeleteDataSet.cs</DependentUpon>
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteRange.Designer.cs">
+      <DependentUpon>Excel_DeleteRange.cs</DependentUpon>
     </Compile>
     <Compile Include="control widget\Application Integration\Excel\Excel_GetCellColor.cs">
       <SubType>UserControl</SubType>
@@ -169,11 +169,29 @@
     <Compile Include="control widget\Application Integration\Excel\Excel_WriteRange.Designer.cs">
       <DependentUpon>Excel_WriteRange.cs</DependentUpon>
     </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_Do While.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_Do While.Designer.cs">
+      <DependentUpon>Control_Do While.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_ForEach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_ForEach.Designer.cs">
+      <DependentUpon>Control_ForEach.cs</DependentUpon>
+    </Compile>
     <Compile Include="control widget\WorkFlow\Controls\Control_If.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="control widget\WorkFlow\Controls\Control_If.Designer.cs">
       <DependentUpon>Control_If.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_While.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control widget\WorkFlow\Controls\Control_While.Designer.cs">
+      <DependentUpon>Control_While.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DS_Variable.cs">
       <DependentUpon>DS_Variable.xsd</DependentUpon>
@@ -207,8 +225,8 @@
     <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_CopySheet.resx">
       <DependentUpon>Excel_CopySheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_DeleteDataSet.resx">
-      <DependentUpon>Excel_DeleteDataSet.cs</DependentUpon>
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_DeleteRange.resx">
+      <DependentUpon>Excel_DeleteRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_GetCellColor.resx">
       <DependentUpon>Excel_GetCellColor.cs</DependentUpon>
@@ -252,8 +270,17 @@
     <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_WriteRange.resx">
       <DependentUpon>Excel_WriteRange.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="control widget\WorkFlow\Controls\Control_Do While.resx">
+      <DependentUpon>Control_Do While.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control widget\WorkFlow\Controls\Control_ForEach.resx">
+      <DependentUpon>Control_ForEach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="control widget\WorkFlow\Controls\Control_If.resx">
       <DependentUpon>Control_If.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control widget\WorkFlow\Controls\Control_While.resx">
+      <DependentUpon>Control_While.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.byn.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -300,7 +327,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\plus.jpg" />
+    <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
