@@ -42,13 +42,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "删除范围";
             // 
-            // Excel_DeleteDataSet
+            // Excel_DeleteRange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "Excel_DeleteDataSet";
+            this.Name = "Excel_DeleteRange";
             this.Size = new System.Drawing.Size(200, 20);
             this.ResumeLayout(false);
             this.PerformLayout();

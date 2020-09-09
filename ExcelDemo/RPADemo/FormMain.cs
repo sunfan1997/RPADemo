@@ -2,6 +2,7 @@
 
 using ExcelDemo;
 using ExcelDemo.control_widget;
+using RPADemo.control_widget.WorkFlow.Controls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -201,6 +202,26 @@ namespace RPADemo
                 case "附加范围":
                     {
                         test = new Excel_AppendRange();
+                    }
+                    break;
+                case "Do While":
+                    {
+                        test = new Control_Do_While();
+                    }
+                    break;
+                case "ForEach":
+                    {
+                        test = new Control_ForEach();
+                    }
+                    break;
+                case "If":
+                    {
+                        test = new Control_If();
+                    }
+                    break;
+                case "While":
+                    {
+                        test = new Control_While();
                     }
                     break;
                 default :MessageBox.Show("控件未添加");break;
