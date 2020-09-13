@@ -119,3 +119,4 @@ D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.control_wid
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.control_widget.WorkFlow.Controls.Control_ForEach.resources
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.control_widget.WorkFlow.Controls.Control_While.resources
 D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\ExcelDemo.control_widget.Excel_DeleteRange.resources
+D:\visual studio project\RPADemo\ExcelDemo\RPADemo\obj\Debug\RPADemo.csprojResolveAssemblyReference.cache

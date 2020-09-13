@@ -52,6 +52,11 @@ namespace ExcelDemo
             g.Clear(this.Parent.BackColor);
             g.Dispose();
         }
+        public virtual void Start()
+        {
+            Console.WriteLine("baseform");
+
+        }
         //public void SetTitle(string title)
         //{
         //    LB_Title.Text = title;

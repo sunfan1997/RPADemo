@@ -1,6 +1,7 @@
 ﻿using System;
 using ExcelDemo.control_widget;
 using System.Windows.Forms;
+using RPADemo;
 
 namespace ExcelDemo.control_widget
 {
@@ -10,6 +11,8 @@ namespace ExcelDemo.control_widget
     public partial class Excel_OpenFile : baseform
     {
         string filename;
+
+      
         public Excel_OpenFile()
         {
             InitializeComponent();
@@ -32,6 +35,13 @@ namespace ExcelDemo.control_widget
         public string GetInfo()
         {
             return filename;
+        }
+        public override void  Start()
+        {
+            CodeGenerator cg = new CodeGenerator();
+            cg.AddField( "path",typeof(string));
+            cg.AddObject("ex", typeof(ExcelHelper),TB_FilePath.Text);
+            cg.GenerateCode();
         }
     }
 }

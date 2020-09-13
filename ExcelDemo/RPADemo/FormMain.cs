@@ -4,6 +4,8 @@ using ExcelDemo;
 using ExcelDemo.control_widget;
 using RPADemo.control_widget.WorkFlow.Controls;
 using System;
+using System.CodeDom;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -19,6 +21,9 @@ namespace RPADemo
         string path = null;
         bool isMouseDown = false;
         bool isMouseMove = false;
+        List<Control> list_control = new List<Control>();
+        List<baseform> list_baseform = new List<baseform>();
+        
 
         DataTable dt = new DataTable();
 
@@ -27,7 +32,7 @@ namespace RPADemo
         public FormMain()
         {
             InitializeComponent();
-            
+
         }
 
         public void btnSpire_Click(object sender, EventArgs e)
@@ -38,7 +43,7 @@ namespace RPADemo
         }
 
 
-        
+
         private void Btn_Saveas_Click(object sender, EventArgs e)
         {
             ReadXml();
@@ -52,7 +57,9 @@ namespace RPADemo
             XmlNode root = xml.CreateElement("config");
             xml.AppendChild(root);
             xml.Save(@"../../parameter.xml");
+            
             FindCtrlName(Pan_Main);
+            ControlSort(Pan_Main);
             MessageBox.Show("保存成功！");
         }
 
@@ -60,8 +67,8 @@ namespace RPADemo
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             isMouseDown = true;
-            
-         
+
+
         }
 
         private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
@@ -87,7 +94,7 @@ namespace RPADemo
                 CheckNode(Node);
                 Point Point = Pan_Main.PointToClient(Control.MousePosition); //鼠标相对于panel2左上角的坐标
                 test.Location = Point;
-                
+
                 this.Pan_Main.Controls.Add(test);
                 FindBaseForm(Pan_Main);
 
@@ -98,19 +105,20 @@ namespace RPADemo
             {
                 isMouseDown = true;
             }
+            FindBaseForm(Pan_Main);
 
         }
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
 
-           
+
 
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
+
             
-            FindBaseForm(Pan_Main); 
         }
 
         #endregion
@@ -224,8 +232,8 @@ namespace RPADemo
                         test = new Control_While();
                     }
                     break;
-                default :MessageBox.Show("控件未添加");break;
-        
+                default: MessageBox.Show("控件未添加"); break;
+
             }
 
         }
@@ -234,6 +242,79 @@ namespace RPADemo
         #region 运行按钮
         private void Tsb_Run_ButtonClick(object sender, EventArgs e)
         {
+            Btn_Save_ButtonClick(null,null);
+            Console.WriteLine(list_baseform.Count);
+            foreach(baseform item in list_baseform)
+            {
+                item.Start();
+            }
+        }
+        
+        //生成代码
+        public void GenCode(baseform baseform)
+        {
+            //CodeCompileUnit unit = new CodeCompileUnit();
+            //unit.ReferencedAssemblies.Add("Demo01.exe");
+            //// 命名空间
+            //CodeNamespace ns = new CodeNamespace("MyApp");
+            //unit.Namespaces.Add(ns);
+            //ns.Imports.Add(new CodeNamespaceImport(nameof(System)));
+
+            //ns.Imports.Add(new CodeNamespaceImport(nameof(RPADemo)));
+            //ns.Imports.Add(new CodeNamespaceImport($"{nameof(System)}.{nameof(System.Windows)}.{nameof(System.Windows.Forms)}"));
+            //// 类型
+            //CodeTypeDeclaration typedec = new CodeTypeDeclaration("Program");
+            //ns.Types.Add(typedec);
+            //typedec.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+            //// 入口点
+            //CodeEntryPointMethod main = new CodeEntryPointMethod();
+            //typedec.Members.Add(main);
+
+            ////// 创建实例
+            ////CodeVariableDeclarationStatement newwindow = new CodeVariableDeclarationStatement();
+            ////main.Statements.Add(newwindow);
+            ////newwindow.Name = "mainWindow";
+            ////newwindow.Type = new CodeTypeReference(nameof(System.Windows.Forms.Form));
+            ////newwindow.InitExpression = new CodeObjectCreateExpression(nameof(System.Windows.Forms.Form));
+
+            ////CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(nameof()), nameof(System.Windows.Forms.Application.Run), new CodeVariableReferenceExpression(newwindow.Name));
+            ////CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
+            ////main.Statements.Add(invrunstatem);
+
+
+            //// 生成代码
+            //CodeDomProvider provider = CodeDomProvider.CreateProvider("cs");
+            //provider.GenerateCodeFromCompileUnit(unit, Console.Out, null);
+
+            //// 编译
+            //CompilerParameters p = new CompilerParameters();
+            //p.GenerateExecutable = true; //生成exe
+            //p.CompilerOptions = "/t:winexe"; //非控制台应用程序
+            //p.OutputAssembly = "testapp.exe";
+            //// 包含入口点的类
+            //p.MainClass = $"{ns.Name}.{typedec.Name}";
+            //// 引用的程序集
+            //p.ReferencedAssemblies.Add("System.dll");
+            //p.ReferencedAssemblies.Add("System.Windows.Forms.dll");
+            //// p.ReferencedAssemblies.Add("ExcelHelper.cs");
+            //p.ReferencedAssemblies.Add("Demo01.exe");
+
+            //CompilerResults res = provider.CompileAssemblyFromDom(p, unit);
+            //if (res.Errors.Count == 0)
+            //{
+            //    Console.WriteLine("编译成功。");
+            //    // 启动它
+            //    System.Diagnostics.Process.Start(res.CompiledAssembly.Location);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("错误信息：");
+            //    foreach (CompilerError er in res.Errors)
+            //    {
+            //        Console.WriteLine(er.ErrorText);
+            //    }
+            //}
+            baseform.Start();
         }
         #endregion
 
@@ -249,6 +330,27 @@ namespace RPADemo
                     FindCtrlName(ctrl);
                 }
             }
+        }
+
+        private void ControlSort(Control parent)
+        {
+            for (int i = 0; i < parent.Controls.Count; i++)
+            {
+                // Console.WriteLine(parent.Controls[i].GetType().Name);
+
+                try
+                {
+                    list_control.Add(parent.Controls[i]);
+                }
+                catch (Exception e)
+                {
+                    //e.ToString();
+                    continue;
+                }
+
+
+            }
+            list_control.Sort(compare);
         }
 
         private void CtrlToXML(Control ctrl)//Linq to XML
@@ -403,36 +505,40 @@ namespace RPADemo
         public void FindBaseForm(Control parent)
         {
             //Console.WriteLine(parent.Controls.Count);
-            List<baseform> list_control = new List<baseform>();
-           
-            for(int i=0;i<parent.Controls.Count;i++)
+
+
+            list_baseform.Clear();
+            for (int i = 0; i < parent.Controls.Count; i++)
             {
-               // Console.WriteLine(parent.Controls[i].GetType().Name);
 
                 try
                 {
-                    list_control.Add((baseform)parent.Controls[i]);
+                    list_baseform.Add((baseform)parent.Controls[i]);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     //e.ToString();
                     continue;
                 }
-                
-               
+
+
             }
-            list_control.Sort(compare);
-            //Console.WriteLine(list_control.Count);
-            for (int i=0;i<list_control.Count-1;i++)
+            if (list_baseform != null)
             {
-               // Console.WriteLine(list_control[i].Name);
+                list_baseform.Sort(compare);
+            
+                //Console.WriteLine(list_control.Count);
+                for (int i=0;i< list_baseform.Count-1;i++)
+                {
+                   // Console.WriteLine(list_control[i].Name);
                 
-                int x1, y1, x2, y2;
-                x1 = list_control[i].Location.X + list_control[i].Size.Width/2;
-                y1 = list_control[i].Location.Y + list_control[i].Size.Height;
-                x2 = list_control[i+1].Location.X + list_control[i+1].Size.Width / 2;
-                y2 = list_control[i+1].Location.Y ;
-                connectline(x1, y1, x2, y2);
+                    int x1, y1, x2, y2;
+                    x1 = list_baseform[i].Location.X + list_baseform[i].Size.Width/2;
+                    y1 = list_baseform[i].Location.Y + list_baseform[i].Size.Height;
+                    x2 = list_baseform[i+1].Location.X + list_baseform[i+1].Size.Width / 2;
+                    y2 = list_baseform[i+1].Location.Y ;
+                    connectline(x1, y1, x2, y2);
+                }
             }
         }
         public void connectline(int x1,int y1,int x2,int y2)
@@ -456,6 +562,7 @@ namespace RPADemo
         
         #endregion
 
+        //比较方法：按位置比较
         private  int compare(Control a,Control b)
         {
             if (a.Location.Y < b.Location.Y)
@@ -470,15 +577,19 @@ namespace RPADemo
             }
             return 1;    
         }
+
+
+
+        #region 变量相关
         //变量按钮
         private void TSBtn_Variable_Click(object sender, EventArgs e)
         {
-            DGV_Variable.Visible = DGV_Variable.Visible == true ? false : true; 
+            DGV_Variable.Visible = DGV_Variable.Visible == true ? false : true;
         }
-        private int rowindex=0;
+        private int rowindex = 0;//所选行
         private void ToolStripMenuItem_Delete_Click(object sender, EventArgs e)
         {
-            if(!DGV_Variable.CurrentRow.IsNewRow)
+            if (!DGV_Variable.CurrentRow.IsNewRow)
             {
                 DGV_Variable.Rows.RemoveAt(rowindex);
             }
@@ -526,8 +637,8 @@ namespace RPADemo
 
             return table;
         }
+        #endregion
 
-       
     }
 
 }

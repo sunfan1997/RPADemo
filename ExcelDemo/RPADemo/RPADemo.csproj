@@ -61,6 +61,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeGenerator.cs" />
     <Compile Include="control widget\Application Integration\Excel\Excel_AppendRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
