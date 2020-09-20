@@ -16,11 +16,8 @@ namespace MyCode
     public class Program
     {
         
-        private string path;
-        
         public static void Main()
         {
-            RPADemo.ExcelHelper ex = new RPADemo.ExcelHelper("1111");
         }
     }
 }

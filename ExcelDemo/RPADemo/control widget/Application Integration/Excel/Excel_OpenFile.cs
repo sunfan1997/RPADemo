@@ -41,6 +41,7 @@ namespace ExcelDemo.control_widget
             CodeGenerator cg = new CodeGenerator();
             cg.AddField( "path",typeof(string));
             cg.AddObject("ex", typeof(ExcelHelper),TB_FilePath.Text);
+           
             cg.GenerateCode();
         }
     }

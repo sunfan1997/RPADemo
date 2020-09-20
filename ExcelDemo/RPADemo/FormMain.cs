@@ -242,12 +242,14 @@ namespace RPADemo
         #region 运行按钮
         private void Tsb_Run_ButtonClick(object sender, EventArgs e)
         {
-            Btn_Save_ButtonClick(null,null);
-            Console.WriteLine(list_baseform.Count);
-            foreach(baseform item in list_baseform)
-            {
-                item.Start();
-            }
+            //Btn_Save_ButtonClick(null,null);
+            //Console.WriteLine(list_baseform.Count);
+            //foreach(baseform item in list_baseform)
+            //{
+            //    item.Start();
+            //}
+            CodeGenerator cg = new CodeGenerator();
+            cg.Start();
         }
         
         //生成代码

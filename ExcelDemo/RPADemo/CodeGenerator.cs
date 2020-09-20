@@ -124,10 +124,11 @@ namespace RPADemo
             provider.GenerateCodeFromCompileUnit(targetUnit, Console.Out, null);
         }
 
-        public static void Start()
+        public  void Start()
         {
             CodeGenerator sample = new CodeGenerator();
-            Test(sample);
+            // Test(sample);
+            main.Statements.Add(new CodeMethodInvokeExpression(new CodeMethodReferenceExpression(new CodeTypeReferenceExpression(typeof(Console)), nameof(Console.WriteLine)), new CodePrimitiveExpression("大于2。")));
             sample.GenerateCode();
         }
 
