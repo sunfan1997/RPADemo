@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPADemo;
 
 namespace ExcelDemo.control_widget
 {
@@ -23,6 +24,12 @@ namespace ExcelDemo.control_widget
         public string GetInfo()
         {
             return TB_SheetName.Text + TB_Range.Text;
+        }
+
+        public override void Start()
+        {
+            CodeGenerator cg = new CodeGenerator();
+            
         }
     }
 }

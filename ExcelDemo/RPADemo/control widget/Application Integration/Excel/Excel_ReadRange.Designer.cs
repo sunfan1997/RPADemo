@@ -47,7 +47,7 @@
             // TB_Range
             // 
             this.TB_Range.Location = new System.Drawing.Point(257, 42);
-            this.TB_Range.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TB_Range.Margin = new System.Windows.Forms.Padding(1);
             this.TB_Range.Name = "TB_Range";
             this.TB_Range.Size = new System.Drawing.Size(42, 21);
             this.TB_Range.TabIndex = 9;
@@ -55,7 +55,7 @@
             // TB_SheetName
             // 
             this.TB_SheetName.Location = new System.Drawing.Point(23, 42);
-            this.TB_SheetName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TB_SheetName.Margin = new System.Windows.Forms.Padding(1);
             this.TB_SheetName.Name = "TB_SheetName";
             this.TB_SheetName.Size = new System.Drawing.Size(234, 21);
             this.TB_SheetName.TabIndex = 8;
@@ -67,7 +67,7 @@
             this.Controls.Add(this.TB_Range);
             this.Controls.Add(this.TB_SheetName);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Excel_ReadRange";
             this.Size = new System.Drawing.Size(320, 100);
             this.ResumeLayout(false);

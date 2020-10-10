@@ -28,7 +28,7 @@
     <title></title>
     <visible>true</visible>
     <enable>true</enable>
-    <location x="208" y="93" />
+    <location x="319" y="116" />
   </controls>
   <controls type="System.Windows.Forms.Label" language="Chinese" name="label1">
     <title>Excel应用程序范围</title>
@@ -43,7 +43,7 @@
     <location x="268" y="44" />
   </controls>
   <controls type="System.Windows.Forms.TextBox" language="Chinese" name="TB_FilePath">
-    <title>"1111"</title>
+    <title>"test.xls"</title>
     <visible>true</visible>
     <enable>true</enable>
     <location x="22" y="44" />

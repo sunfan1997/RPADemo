@@ -244,10 +244,10 @@ namespace RPADemo
         {
             //Btn_Save_ButtonClick(null,null);
             //Console.WriteLine(list_baseform.Count);
-            //foreach(baseform item in list_baseform)
-            //{
-            //    item.Start();
-            //}
+            foreach (baseform item in list_baseform)
+            {
+                item.Start();
+            }
             CodeGenerator cg = new CodeGenerator();
             cg.Start();
         }

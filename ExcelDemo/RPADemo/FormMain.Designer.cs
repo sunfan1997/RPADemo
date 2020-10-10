@@ -27,7 +27,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.btnSpire = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.mainlabel = new System.Windows.Forms.ToolStripLabel();
             this.designlabel = new System.Windows.Forms.ToolStripLabel();
@@ -74,12 +73,6 @@
             this.btnSpire.Name = "btnSpire";
             this.btnSpire.UseVisualStyleBackColor = true;
             this.btnSpire.Click += new System.EventHandler(this.btnSpire_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "证件照.jpg");
             // 
             // toolStrip1
             // 
@@ -364,7 +357,6 @@
         private System.Windows.Forms.ToolStripMenuItem Btn_Saveas;
         private System.Windows.Forms.ToolStripMenuItem 全部保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Pan_Main;
         private System.Windows.Forms.TreeView treeView1;

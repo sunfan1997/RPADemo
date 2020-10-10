@@ -33,6 +33,10 @@ namespace RPADemo
                 sheet = workbook.Worksheets[sheets];
             }
         }
+        public void  SetSheet(int sheetnum)
+        {
+            sheet = workbook.Worksheets[sheetnum];
+        }
         //改变颜色
         public void ChangeColor(string path)
         {
