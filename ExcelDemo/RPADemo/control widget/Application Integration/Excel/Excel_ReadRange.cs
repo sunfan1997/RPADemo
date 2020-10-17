@@ -25,11 +25,9 @@ namespace ExcelDemo.control_widget
         {
             return TB_SheetName.Text + TB_Range.Text;
         }
-
-        public override void Start()
+        public override void Start(CodeGenerator cg)
         {
-            CodeGenerator cg = new CodeGenerator();
-            
         }
+
     }
 }

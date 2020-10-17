@@ -7,10 +7,11 @@ using Spire.Xls;
 using System.Data;
 using Spire.Xls.Collections;
 using Spire.Xls.Core.Spreadsheet.Sorting;
+using System.Windows;
 
 namespace RPADemo
 {
-    class ExcelHelper
+    public class ExcelHelper
     {
         private string path;
         Workbook workbook = new Workbook();
@@ -40,7 +41,7 @@ namespace RPADemo
         //改变颜色
         public void ChangeColor(string path)
         {
-           
+          
             sheet.Range["A1:A2"].Style.KnownColor = ExcelColors.Gray50Percent;
             workbook.SaveToFile(path, ExcelVersion.Version2016);
 
@@ -244,10 +245,11 @@ namespace RPADemo
 
         #region 读取\写入单元格
         //读取单元格
-        public Object ReadCell(int row,int column)
+        public void ReadCell(int row,int column)
         {
             DataTable dt = SheetToDataTable(false, sheet);
-            return dt.Rows[row][column];
+            MessageBox.Show( (String)dt.Rows[row][column]);
+            
         }
         //写入单元格
         public void WriteCell(int row, int column,object content)

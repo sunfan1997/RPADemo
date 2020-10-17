@@ -32,7 +32,7 @@ namespace RPADemo
         public FormMain()
         {
             InitializeComponent();
-
+            ReadXml();
         }
 
         public void btnSpire_Click(object sender, EventArgs e)
@@ -63,27 +63,33 @@ namespace RPADemo
             MessageBox.Show("保存成功！");
         }
 
-        #region treeview鼠标事件
+        #region treeview事件
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             isMouseDown = true;
-
-
         }
-
         private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            isMouseDown = true;
+           isMouseDown = true;
         }
         private void treeView1_MouseLeave(object sender, EventArgs e)
         {
-            isMouseMove = true;
+           isMouseMove = true;
         }
         private void treeView1_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
         {
             Node = e.Node;
         }
-
+        private void treeView1_DragOver(object sender, DragEventArgs e)
+        {
+            Node.Text = e.Data.ToString();
+            Console.WriteLine(Node.Text);
+        }
+        private void treeView1_DragDrop(object sender, DragEventArgs e)
+        {
+            Node.Text = e.Data.ToString();
+            Console.WriteLine(Node.Text);
+        }
         #endregion
 
         #region panel2鼠标事件
@@ -93,12 +99,19 @@ namespace RPADemo
             {
                 CheckNode(Node);
                 Point Point = Pan_Main.PointToClient(Control.MousePosition); //鼠标相对于panel2左上角的坐标
-                test.Location = Point;
+                if (test != null)
+                {
+                    test.Location = Point;
+
+                }
 
                 this.Pan_Main.Controls.Add(test);
                 FindBaseForm(Pan_Main);
 
             }
+
+            
+
             isMouseDown = false;
             isMouseMove = false;
             if (Node.Text.Equals(treeView1.SelectedNode.Text))
@@ -244,12 +257,13 @@ namespace RPADemo
         {
             //Btn_Save_ButtonClick(null,null);
             //Console.WriteLine(list_baseform.Count);
+            CodeGenerator cg = new CodeGenerator();
             foreach (baseform item in list_baseform)
             {
-                item.Start();
+                item.Start(cg);
             }
-            CodeGenerator cg = new CodeGenerator();
-            cg.Start();
+            
+            cg.Start(cg);
         }
         
         //生成代码
@@ -316,7 +330,7 @@ namespace RPADemo
             //        Console.WriteLine(er.ErrorText);
             //    }
             //}
-            baseform.Start();
+           // baseform.Start(cg);
         }
         #endregion
 
@@ -587,6 +601,12 @@ namespace RPADemo
         private void TSBtn_Variable_Click(object sender, EventArgs e)
         {
             DGV_Variable.Visible = DGV_Variable.Visible == true ? false : true;
+            BT__Output.Visible = false;
+        }
+        private void TSBtn_Output_Click(object sender, EventArgs e)
+        {
+            BT__Output.Visible = BT__Output.Visible == true ? false : true;
+            DGV_Variable.Visible = false;
         }
         private int rowindex = 0;//所选行
         private void ToolStripMenuItem_Delete_Click(object sender, EventArgs e)
@@ -639,8 +659,13 @@ namespace RPADemo
 
             return table;
         }
+
+
+
+
         #endregion
 
+     
     }
 
 }

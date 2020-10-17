@@ -17,11 +17,15 @@ namespace RPADemo
         private CodeTypeDeclaration targetClass = new CodeTypeDeclaration("Program");
         private static readonly string targetInstance = "engineInstance";
         private CodeEntryPointMethod main = new CodeEntryPointMethod();
+        private CodeNamespace sample;
 
         public CodeGenerator()
         {
-            CodeNamespace sample = new CodeNamespace("MyCode");
+            sample = new CodeNamespace("MyCode");
             sample.Imports.Add(new CodeNamespaceImport("System"));
+            sample.Imports.Add(new CodeNamespaceImport($"{nameof(System)}.{nameof(System.Windows)}.{nameof(System.Windows.Forms)}"));
+            sample.Imports.Add(new CodeNamespaceImport("RPADemo"));
+
             targetClass.IsClass = true;
             targetClass.TypeAttributes = TypeAttributes.Public;
             sample.Types.Add(targetClass);
@@ -110,6 +114,14 @@ namespace RPADemo
             obj.InitExpression = new CodeObjectCreateExpression(fieldType, new CodeVariableReferenceExpression(paraName));
         }
 
+        public void AddMethod(string name,string method,string x1,string x2)
+        {
+            CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(name),method, new CodeVariableReferenceExpression(x1), new CodeVariableReferenceExpression(x2));
+            CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
+            //CodeMethodInvokeExpression invokeexp1 = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(cvds.Name), nameof(ExcelHelper.CreateFile),new CodePrimitiveExpression(@"D:\visual studio project\Demo01\Demo01\bin\Debug"));
+            //CodeExpressionStatement invrunstatem1 = new CodeExpressionStatement(invokeexp1);
+            main.Statements.Add(invrunstatem);
+        }
         public void GenerateCode()
         {
             CodeDomProvider provider = new CSharpCodeProvider();
@@ -122,64 +134,45 @@ namespace RPADemo
             // 生成代码
             CodeDomProvider provider1 = CodeDomProvider.CreateProvider("cs");
             provider.GenerateCodeFromCompileUnit(targetUnit, Console.Out, null);
+
+            // 编译
+            CompilerParameters p = new CompilerParameters();
+            p.GenerateExecutable = true; //生成exe
+            p.CompilerOptions = "/t:winexe"; //非控制台应用程序
+            p.OutputAssembly = "testapp.exe";
+            // 包含入口点的类
+            p.MainClass = $"{sample.Name}.{targetClass.Name}";
+            // 引用的程序集
+            p.ReferencedAssemblies.Add("System.dll");
+            p.ReferencedAssemblies.Add("System.Windows.Forms.dll");
+            // p.ReferencedAssemblies.Add("ExcelHelper.cs");
+            p.ReferencedAssemblies.Add("RPADemo.exe");
+
+            CompilerResults res = provider.CompileAssemblyFromDom(p, targetUnit);
+            if (res.Errors.Count == 0)
+            {
+                Console.WriteLine("编译成功。");
+                // 启动它
+                System.Diagnostics.Process.Start(res.CompiledAssembly.Location);
+            }
+            else
+            {
+                Console.WriteLine("错误信息：");
+                foreach (CompilerError er in res.Errors)
+                {
+                    Console.WriteLine(er.ErrorText);
+                }
+            }
         }
 
-        public  void Start()
+        public  void Start(CodeGenerator sample)
         {
-            CodeGenerator sample = new CodeGenerator();
+            //CodeGenerator sample = new CodeGenerator();
             // Test(sample);
-            main.Statements.Add(new CodeMethodInvokeExpression(new CodeMethodReferenceExpression(new CodeTypeReferenceExpression(typeof(Console)), nameof(Console.WriteLine)), new CodePrimitiveExpression("大于2。")));
+            //main.Statements.Add(new CodeMethodInvokeExpression(new CodeMethodReferenceExpression(new CodeTypeReferenceExpression(typeof(Console)), nameof(Console.WriteLine)), new CodePrimitiveExpression("大于2。")));
             sample.GenerateCode();
         }
 
-        public static void Test(CodeGenerator sample)
-        {
-            var methodToAdd = "Test";
-            var returnType = typeof(Dictionary<string, object>);
-            var paraname = "key";
-            var paraType = typeof(string);
-            var parTypes = new Dictionary<string, Type>() { { "no", typeof(int) }, { paraname, paraType } };
-
-            var parameters = GenerateParameters(parTypes);
-            var parArguments = GenerateParametersArguments(parTypes).ToArray();
-
-            sample.AddMethod(methodToAdd, returnType, "This is for engine facade",
-                new CodeMethodInvokeExpression(
-                    new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), targetInstance),
-                    methodToAdd, parArguments), parameters);
-            sample.AddAbstractMethod(methodToAdd, returnType, "This is for engine base", paraname, paraType);
-            sample.AddMethod(methodToAdd, returnType, "This is for local engine",
-                new CodeMethodInvokeExpression(new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "scenario"),
-                    methodToAdd, parArguments), parameters);
-            sample.AddMethod(methodToAdd, returnType, "This is for remote engine",
-                new CodeMethodInvokeExpression(
-                    new CodeTypeReferenceExpression(new CodeTypeReference("HostProxy")), methodToAdd,
-                    parArguments), parameters);
-
-            var dump = parArguments.ToList();
-            parameters.Insert(0, new CodeParameterDeclarationExpression(typeof(string), "engineKey"));
-            dump.Insert(0, new CodeArgumentReferenceExpression("engineKey"));
-            parArguments = dump.ToArray();
-
-            sample.AddMethod(methodToAdd, returnType, "This is for host",
-                new CodeMethodInvokeExpression(new CodeTypeReferenceExpression("InstanceManager"), methodToAdd, parArguments),
-                parameters);
-
-            dump.Insert(0, new CodePrimitiveExpression(methodToAdd));
-            dump.Insert(0, new CodeArgumentReferenceExpression("host_name"));
-            parArguments = dump.ToArray();
-            sample.AddMethod(methodToAdd, returnType, "This is for host",
-                new CodeMethodInvokeExpression(new CodeTypeReferenceExpression("host"), string.Format("Invoke<{0}>", returnType.ToString())
-                    , parArguments), parameters);
-        }
-
-        private static List<CodeParameterDeclarationExpression> GenerateParameters(Dictionary<string, Type> parameterTypes)
-        {
-            return parameterTypes.Select(parameterType => new CodeParameterDeclarationExpression(parameterType.Value, parameterType.Key)).ToList();
-        }
-        private static List<CodeExpression> GenerateParametersArguments(Dictionary<string, Type> parameterTypes)
-        {
-            return parameterTypes.Select(parameterType => (CodeExpression)new CodeArgumentReferenceExpression(parameterType.Key)).ToList();
-        }
+       
     }
 }

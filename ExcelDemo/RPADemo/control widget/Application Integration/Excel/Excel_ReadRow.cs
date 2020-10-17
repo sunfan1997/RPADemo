@@ -21,7 +21,7 @@ namespace ExcelDemo.control_widget
         }
         public string GetInfo()
         {
-            return TB_SheetName.Text + TB_CellName.Text;
+            return TB_SheetName.Text + TB_RowName.Text;
         }
 
        

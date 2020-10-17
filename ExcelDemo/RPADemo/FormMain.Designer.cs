@@ -46,6 +46,7 @@
             this.Tsb_Run = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Pan_Main = new System.Windows.Forms.Panel();
+            this.BT__Output = new System.Windows.Forms.TextBox();
             this.DGV_Variable = new System.Windows.Forms.DataGridView();
             this.Varname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VarType = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -57,6 +58,7 @@
             this.TSBtn_Variable = new System.Windows.Forms.ToolStripButton();
             this.TSBtn_Parameter = new System.Windows.Forms.ToolStripButton();
             this.TSBtn_Import = new System.Windows.Forms.ToolStripButton();
+            this.TSBtn_Output = new System.Windows.Forms.ToolStripButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -196,6 +198,7 @@
             // Pan_Main
             // 
             this.Pan_Main.BackColor = System.Drawing.Color.White;
+            this.Pan_Main.Controls.Add(this.BT__Output);
             this.Pan_Main.Controls.Add(this.DGV_Variable);
             this.Pan_Main.Controls.Add(this.toolStrip3);
             resources.ApplyResources(this.Pan_Main, "Pan_Main");
@@ -203,6 +206,11 @@
             this.Pan_Main.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.Pan_Main.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.Pan_Main.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // BT__Output
+            // 
+            resources.ApplyResources(this.BT__Output, "BT__Output");
+            this.BT__Output.Name = "BT__Output";
             // 
             // DGV_Variable
             // 
@@ -275,7 +283,8 @@
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSBtn_Variable,
             this.TSBtn_Parameter,
-            this.TSBtn_Import});
+            this.TSBtn_Import,
+            this.TSBtn_Output});
             this.toolStrip3.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip3.Name = "toolStrip3";
             // 
@@ -298,6 +307,13 @@
             resources.ApplyResources(this.TSBtn_Import, "TSBtn_Import");
             this.TSBtn_Import.Name = "TSBtn_Import";
             // 
+            // TSBtn_Output
+            // 
+            this.TSBtn_Output.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.TSBtn_Output, "TSBtn_Output");
+            this.TSBtn_Output.Name = "TSBtn_Output";
+            this.TSBtn_Output.Click += new System.EventHandler(this.TSBtn_Output_Click);
+            // 
             // treeView1
             // 
             this.treeView1.AllowDrop = true;
@@ -307,8 +323,11 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             ((System.Windows.Forms.TreeNode)(resources.GetObject("treeView1.Nodes")))});
+            this.treeView1.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeView1_ItemDrag);
             this.treeView1.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.treeView1_NodeMouseHover);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop);
+            this.treeView1.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView1_DragOver);
             this.treeView1.MouseLeave += new System.EventHandler(this.treeView1_MouseLeave);
             // 
             // FormMain
@@ -372,6 +391,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn VarType;
         private System.Windows.Forms.DataGridViewComboBoxColumn VarRange;
         private System.Windows.Forms.DataGridViewTextBoxColumn VarValue;
+        private System.Windows.Forms.ToolStripButton TSBtn_Output;
+        private System.Windows.Forms.TextBox BT__Output;
     }
 }
 

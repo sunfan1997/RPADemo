@@ -24,8 +24,8 @@ namespace ExcelDemo.control_widget
         }
         public string GetInfo()
         {
-            bookname = TB_BookName.Text;
-            cellname = TB_CellName.Text;
+            bookname = TB_SheetName.Text;
+            cellname = TB_Range.Text;
             content = TB_Content.Text;
             return bookname + cellname + content;
         }

@@ -26,9 +26,6 @@ namespace ExcelDemo.control_widget
             string bookname = TB_BookName.Text;
             return true;
         }
-        public override void Start()
-        {
-            
-        }
+       
     }
 }

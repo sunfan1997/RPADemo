@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.TB_CellName = new System.Windows.Forms.TextBox();
+            this.TB_RowName = new System.Windows.Forms.TextBox();
             this.TB_SheetName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -42,15 +42,15 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "读取行";
             // 
-            // TB_CellName
+            // TB_RowName
             // 
-            this.TB_CellName.Location = new System.Drawing.Point(257, 42);
-            this.TB_CellName.Margin = new System.Windows.Forms.Padding(1);
-            this.TB_CellName.Name = "TB_CellName";
-            this.TB_CellName.Size = new System.Drawing.Size(42, 21);
-            this.TB_CellName.TabIndex = 11;
+            this.TB_RowName.Location = new System.Drawing.Point(257, 42);
+            this.TB_RowName.Margin = new System.Windows.Forms.Padding(1);
+            this.TB_RowName.Name = "TB_RowName";
+            this.TB_RowName.Size = new System.Drawing.Size(42, 21);
+            this.TB_RowName.TabIndex = 11;
             // 
             // TB_SheetName
             // 
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.TB_CellName);
+            this.Controls.Add(this.TB_RowName);
             this.Controls.Add(this.TB_SheetName);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -78,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TB_CellName;
+        private System.Windows.Forms.TextBox TB_RowName;
         private System.Windows.Forms.TextBox TB_SheetName;
     }
 }

@@ -52,7 +52,7 @@ namespace ExcelDemo
             g.Clear(this.Parent.BackColor);
             g.Dispose();
         }
-        public virtual void Start()
+        public virtual void Start(CodeGenerator cg)
         {
             Console.WriteLine("baseform");
 

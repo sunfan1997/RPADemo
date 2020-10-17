@@ -11,13 +11,19 @@
 namespace MyCode
 {
     using System;
+    using System.Windows.Forms;
+    using RPADemo;
     
     
     public class Program
     {
         
+        private string path;
+        
         public static void Main()
         {
+            RPADemo.ExcelHelper ex = new RPADemo.ExcelHelper("test.xlsx");
+            ex.ReadCell(1, 1);
         }
     }
 }

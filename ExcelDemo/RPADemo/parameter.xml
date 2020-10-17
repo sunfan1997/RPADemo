@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
+  <controls type="System.Windows.Forms.TextBox" language="Chinese" name="BT__Output">
+    <title></title>
+    <visible>false</visible>
+    <enable>true</enable>
+    <location x="0" y="128" />
+  </controls>
   <controls type="System.Windows.Forms.DataGridView" language="Chinese" name="DGV_Variable">
     <title></title>
     <visible>true</visible>
@@ -23,29 +29,5 @@
     <visible>true</visible>
     <enable>true</enable>
     <location x="0" y="478" />
-  </controls>
-  <controls type="ExcelDemo.control_widget.Excel_OpenFile" language="Chinese" name="Excel_OpenFile">
-    <title></title>
-    <visible>true</visible>
-    <enable>true</enable>
-    <location x="319" y="116" />
-  </controls>
-  <controls type="System.Windows.Forms.Label" language="Chinese" name="label1">
-    <title>Excel应用程序范围</title>
-    <visible>true</visible>
-    <enable>true</enable>
-    <location x="0" y="0" />
-  </controls>
-  <controls type="System.Windows.Forms.Button" language="Chinese" name="Btn_SelectFile">
-    <title>…</title>
-    <visible>true</visible>
-    <enable>true</enable>
-    <location x="268" y="44" />
-  </controls>
-  <controls type="System.Windows.Forms.TextBox" language="Chinese" name="TB_FilePath">
-    <title>"test.xls"</title>
-    <visible>true</visible>
-    <enable>true</enable>
-    <location x="22" y="44" />
   </controls>
 </config>

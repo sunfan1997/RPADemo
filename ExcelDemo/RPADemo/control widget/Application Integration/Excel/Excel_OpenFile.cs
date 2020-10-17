@@ -28,21 +28,21 @@ namespace ExcelDemo.control_widget
             {
                 //将打开文件对话框的FileName属性传递到你的字符串进行处理
                 filename = openDialog.FileName;
-                TB_FilePath.Text = "'"+filename+"'";
-            }
+                TB_FilePath.Text ="\""+filename+"\"";
+            } 
         }
 
         public string GetInfo()
         {
             return filename;
         }
-        public override void  Start()
+        public override void  Start(CodeGenerator cg)
         {
-            CodeGenerator cg = new CodeGenerator();
+            
             cg.AddField( "path",typeof(string));
             cg.AddObject("ex", typeof(ExcelHelper),TB_FilePath.Text);
            
-            //cg.GenerateCode();
+            //cg.GenerateCode();.
         }
     }
 }
