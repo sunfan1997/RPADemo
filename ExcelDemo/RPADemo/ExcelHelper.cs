@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Spire.Xls;
 using System.Data;
-using Spire.Xls.Collections;
-using Spire.Xls.Core.Spreadsheet.Sorting;
 using System.Windows;
 
 namespace RPADemo
@@ -38,14 +32,26 @@ namespace RPADemo
         {
             sheet = workbook.Worksheets[sheetnum];
         }
+        public void SetSheet(String sheetname)
+        {
+            sheet = workbook.Worksheets[sheetname];
+        }
         //改变颜色
         public void ChangeColor(string path)
         {
           
             sheet.Range["A1:A2"].Style.KnownColor = ExcelColors.Gray50Percent;
-            workbook.SaveToFile(path, ExcelVersion.Version2016);
+           
 
         }
+
+        #region 保存工作簿
+        public void SaveBook()
+        {
+            workbook.SaveToFile(path, ExcelVersion.Version2016);
+        }
+        #endregion
+
         #region 列重命名
         /// <summary>
         /// 我的理解是更改第一行的文本内容
@@ -55,6 +61,13 @@ namespace RPADemo
         public void RenameColumn(int column,object name)
         {
             WriteCell(0, column, name);
+        }
+        #endregion
+
+        #region sheet表删除
+        public void DeleteSheet()
+        {
+            workbook.Worksheets.Remove(sheet.Name);
         }
         #endregion
 

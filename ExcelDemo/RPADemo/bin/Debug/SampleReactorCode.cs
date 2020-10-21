@@ -23,7 +23,9 @@ namespace MyCode
         public static void Main()
         {
             RPADemo.ExcelHelper ex = new RPADemo.ExcelHelper("test.xlsx");
-            ex.ReadCell(1, 1);
+            ex.SetSheet(1);
+            ex.DeleteSheet();
+            ex.SaveBook();
         }
     }
 }

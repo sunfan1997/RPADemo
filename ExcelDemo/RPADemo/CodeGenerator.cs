@@ -113,10 +113,33 @@ namespace RPADemo
             obj.Type = new CodeTypeReference(fieldType);
             obj.InitExpression = new CodeObjectCreateExpression(fieldType, new CodeVariableReferenceExpression(paraName));
         }
-
+        public void AddMethod(string name, string method)
+        {
+            CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(name), method);
+            CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
+            //CodeMethodInvokeExpression invokeexp1 = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(cvds.Name), nameof(ExcelHelper.CreateFile),new CodePrimitiveExpression(@"D:\visual studio project\Demo01\Demo01\bin\Debug"));
+            //CodeExpressionStatement invrunstatem1 = new CodeExpressionStatement(invokeexp1);
+            main.Statements.Add(invrunstatem);
+        }
+        public void AddMethod(string name, string method, string x1)
+        {
+            CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(name), method, new CodeVariableReferenceExpression(x1));
+            CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
+            //CodeMethodInvokeExpression invokeexp1 = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(cvds.Name), nameof(ExcelHelper.CreateFile),new CodePrimitiveExpression(@"D:\visual studio project\Demo01\Demo01\bin\Debug"));
+            //CodeExpressionStatement invrunstatem1 = new CodeExpressionStatement(invokeexp1);
+            main.Statements.Add(invrunstatem);
+        }
         public void AddMethod(string name,string method,string x1,string x2)
         {
             CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(name),method, new CodeVariableReferenceExpression(x1), new CodeVariableReferenceExpression(x2));
+            CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
+            //CodeMethodInvokeExpression invokeexp1 = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(cvds.Name), nameof(ExcelHelper.CreateFile),new CodePrimitiveExpression(@"D:\visual studio project\Demo01\Demo01\bin\Debug"));
+            //CodeExpressionStatement invrunstatem1 = new CodeExpressionStatement(invokeexp1);
+            main.Statements.Add(invrunstatem);
+        }
+        public void AddMethod(string name, string method, string x1, string x2,string x3)
+        {
+            CodeMethodInvokeExpression invokeexp = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(name), method, new CodeVariableReferenceExpression(x1), new CodeVariableReferenceExpression(x2), new CodeVariableReferenceExpression(x3));
             CodeExpressionStatement invrunstatem = new CodeExpressionStatement(invokeexp);
             //CodeMethodInvokeExpression invokeexp1 = new CodeMethodInvokeExpression(new CodeTypeReferenceExpression(cvds.Name), nameof(ExcelHelper.CreateFile),new CodePrimitiveExpression(@"D:\visual studio project\Demo01\Demo01\bin\Debug"));
             //CodeExpressionStatement invrunstatem1 = new CodeExpressionStatement(invokeexp1);

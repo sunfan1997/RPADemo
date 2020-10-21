@@ -2,6 +2,7 @@
 
 using ExcelDemo;
 using ExcelDemo.control_widget;
+using RPADemo.control_widget.Application_Integration.Excel;
 using RPADemo.control_widget.WorkFlow.Controls;
 using System;
 using System.CodeDom;
@@ -140,113 +141,122 @@ namespace RPADemo
 
         private void CheckNode(TreeNode node)
         {
-            switch (node.Text)
+         if(node.Text!=null)
             {
-                case "Excel应用程序范围":
-                    {
-                        test = new Excel_OpenFile();
-                    }
-                    break;
-                case "保存工作簿":
-                    {
-                        test = new Excel_SaveBook();
+                switch (node.Text)
+                {
+                    case "Excel应用程序范围":
+                        {
+                            test = new Excel_OpenFile();
+                        }
+                        break;
+                    case "保存工作簿":
+                        {
+                            test = new Excel_SaveBook();
 
-                    }
-                    break;
-                case "关闭工作簿":
-                    {
-                        test = new Excel_CloseBook();
+                        }
+                        break;
+                    case "关闭工作簿":
+                        {
+                            test = new Excel_CloseBook();
 
-                    }
-                    break;
-                case "写入单元格":
-                    {
-                        test = new Excel_WriteCell();
+                        }
+                        break;
+                    case "写入单元格":
+                        {
+                            test = new Excel_WriteCell();
 
-                    }
-                    break;
-                case "写入单范围":
-                    {
-                        test = new Excel_WriteRange();
-                    }
-                    break;
-                case "删除单范围":
-                    {
-                        test = new Excel_DeleteRange();
-                    }
-                    break;
-                case "获取单元格颜色":
-                    {
-                        test = new Excel_GetCellColor();
-                    }
-                    break;
-                case "获取工作簿工作表":
-                    {
-                        test = new Excel_GetWorkBookSheet();
-                    }
-                    break;
-                case "获取选定范围":
-                    {
-                        test = new Excel_GetSelectedRange();
-                    }
-                    break;
-                case "读取列":
-                    {
-                        test = new Excel_ReadCloumn();
-                    }
-                    break;
-                case "读取单元格":
-                    {
-                        test = new Excel_ReadCell();
-                    }
-                    break;
-                case "读取单元格公式":
-                    {
-                        test = new Excel_ReadCellFormula();
-                    }
-                    break;
-                case "读取范围":
-                    {
-                        test = new Excel_ReadRange();
-                    }
-                    break;
-                case "读取行":
-                    {
-                        test = new Excel_ReadRow();
-                    }
-                    break;
-                case "选取范围":
-                    {
-                        test = new Excel_SelectRange();
-                    }
-                    break;
-                case "附加范围":
-                    {
-                        test = new Excel_AppendRange();
-                    }
-                    break;
-                case "Do While":
-                    {
-                        test = new Control_Do_While();
-                    }
-                    break;
-                case "ForEach":
-                    {
-                        test = new Control_ForEach();
-                    }
-                    break;
-                case "If":
-                    {
-                        test = new Control_If();
-                    }
-                    break;
-                case "While":
-                    {
-                        test = new Control_While();
-                    }
-                    break;
-                default: MessageBox.Show("控件未添加"); break;
+                        }
+                        break;
+                    case "写入单范围":
+                        {
+                            test = new Excel_WriteRange();
+                        }
+                        break;
+                    case "删除单范围":
+                        {
+                            test = new Excel_DeleteRange();
+                        }
+                        break;
+                    case "获取单元格颜色":
+                        {
+                            test = new Excel_GetCellColor();
+                        }
+                        break;
+                    case "获取工作簿工作表":
+                        {
+                            test = new Excel_GetWorkBookSheet();
+                        }
+                        break;
+                    case "获取选定范围":
+                        {
+                            test = new Excel_GetSelectedRange();
+                        }
+                        break;
+                    case "读取列":
+                        {
+                            test = new Excel_ReadCloumn();
+                        }
+                        break;
+                    case "读取单元格":
+                        {
+                            test = new Excel_ReadCell();
+                        }
+                        break;
+                    case "读取单元格公式":
+                        {
+                            test = new Excel_ReadCellFormula();
+                        }
+                        break;
+                    case "读取范围":
+                        {
+                            test = new Excel_ReadRange();
+                        }
+                        break;
+                    case "读取行":
+                        {
+                            test = new Excel_ReadRow();
+                        }
+                        break;
+                    case "选取范围":
+                        {
+                            test = new Excel_SelectRange();
+                        }
+                        break;
+                    case "附加范围":
+                        {
+                            test = new Excel_AppendRange();
+                        }
+                        break;
+                    case "删除工作表":
+                        {
+                            test = new Excel_DeleteSheet();
+                        }
+                        break;
+                    case "Do While":
+                        {
+                            test = new Control_Do_While();
+                        }
+                        break;
+                    case "ForEach":
+                        {
+                            test = new Control_ForEach();
+                        }
+                        break;
+                    case "If":
+                        {
+                            test = new Control_If();
+                        }
+                        break;
+                    case "While":
+                        {
+                            test = new Control_While();
+                        }
+                        break;
 
+                    default: MessageBox.Show("控件未添加"); break;
+
+                }
             }
 
         }

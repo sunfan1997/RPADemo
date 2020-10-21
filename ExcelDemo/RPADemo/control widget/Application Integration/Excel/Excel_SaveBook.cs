@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPADemo;
 
 namespace ExcelDemo.control_widget
 {
@@ -22,6 +23,10 @@ namespace ExcelDemo.control_widget
         public bool GetInfo()
         {
             return true;
+        }
+        public override void Start(CodeGenerator cg)
+        {
+            cg.AddMethod("ex", nameof(ExcelHelper.SaveBook));
         }
     }
     

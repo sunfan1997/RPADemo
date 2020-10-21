@@ -86,6 +86,12 @@
     <Compile Include="control widget\Application Integration\Excel\Excel_DeleteRange.Designer.cs">
       <DependentUpon>Excel_DeleteRange.cs</DependentUpon>
     </Compile>
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteSheet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control widget\Application Integration\Excel\Excel_DeleteSheet.Designer.cs">
+      <DependentUpon>Excel_DeleteSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="control widget\Application Integration\Excel\Excel_GetCellColor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_DeleteRange.resx">
       <DependentUpon>Excel_DeleteRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_DeleteSheet.resx">
+      <DependentUpon>Excel_DeleteSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="control widget\Application Integration\Excel\Excel_GetCellColor.resx">
       <DependentUpon>Excel_GetCellColor.cs</DependentUpon>

@@ -33,7 +33,7 @@ namespace ExcelDemo.control_widget
         public override void Start(CodeGenerator cg)
         {
             List<string> list = new List<string>(TB_CellName.Text.Replace("\"", "").Split(','));
-           // cg.AddMethod("ex", nameof(ExcelHelper.WriteCell), list[0], list[1], content);
+            cg.AddMethod("ex", nameof(ExcelHelper.WriteCell), list[0], list[1], content);
         }
 
     }
